@@ -1,0 +1,1006 @@
+SQL> @?/rdbms/admin/sqltrpt
+
+15 Most expensive SQL in the cursor cache
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+SQL_ID           ELAPSED                                                        
+------------- ----------                                                        
+SQL_TEXT_FRAGMENT                                                               
+--------------------------------------------------------------------------------
+f1xfww55nj0xp ##########                                                        
+begin ctxsys.syncrn(:idxownid, :idxoname, :idxid, :ixpi                         
+                                                                                
+8ra471nafy8rx  26,603.74                                                        
+select * from jm  where (status not in (:"SYS_B_0",:"SY                         
+                                                                                
+3xjy7vzrsu8k4  12,685.87                                                        
+select * from wfassignment  where (((assigncode=:"SYS_B                         
+                                                                                
+
+SQL_ID           ELAPSED                                                        
+------------- ----------                                                        
+SQL_TEXT_FRAGMENT                                                               
+--------------------------------------------------------------------------------
+a7m88wpm2pndn   9,208.19                                                        
+select * from workorder  where (orgid= :"SYS_B_00" ) an                         
+                                                                                
+d6qm090xdscut   7,238.29                                                        
+SELECT S1.*,(SELECT (SUM(NVL(REGULARHRS, :"SYS_B_000")                          
+                                                                                
+attwvvwpmnjvr   6,225.45                                                        
+select seed,servertimestamp,lastrun, lastend from tasks                         
+                                                                                
+
+SQL_ID           ELAPSED                                                        
+------------- ----------                                                        
+SQL_TEXT_FRAGMENT                                                               
+--------------------------------------------------------------------------------
+4xwwaz18ktxzd   5,345.86                                                        
+update taskscheduler  set servername =  :1   , seed =                           
+                                                                                
+f16212hyn8pxh   5,298.27                                                        
+SELECT sum(NVL(linecost,:"SYS_B_0")+NVL(TAX1,:"SYS_B_1"                         
+                                                                                
+fhf8upax5cxsz   4,997.65                                                        
+BEGIN sys.dbms_auto_report_internal.i_save_report (:rep                         
+                                                                                
+
+SQL_ID           ELAPSED                                                        
+------------- ----------                                                        
+SQL_TEXT_FRAGMENT                                                               
+--------------------------------------------------------------------------------
+4dt4jgb0x4d9b   3,958.19                                                        
+select * from workorder  where (orgid= :"SYS_B_00" ) an                         
+                                                                                
+0za9fv0j1vgkk   3,558.02                                                        
+WITH MONITOR_DATA AS (SELECT * FROM TABLE(GV$(CURSOR( S                         
+                                                                                
+fxy40vgn5hufj   3,514.11                                                        
+SELECT ((SELECT MAX (SEQUENCE#) FROM GV$ARCHIVED_LOG WH                         
+                                                                                
+
+SQL_ID           ELAPSED                                                        
+------------- ----------                                                        
+SQL_TEXT_FRAGMENT                                                               
+--------------------------------------------------------------------------------
+74rnt6yw2a4gj   3,173.41                                                        
+select document from docinfo where document= :1                                 
+                                                                                
+ax40dd907w1mq   3,105.95                                                        
+DECLARE job BINARY_INTEGER := :job;  next_date TIMESTAM                         
+                                                                                
+d1s02myktu19h   2,965.49                                                        
+begin dbms_utility.validate(:1,:2,:3,:4); end;                                  
+                                                                                
+
+15 Most expensive SQL in the workload repository
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+SQL_ID           ELAPSED                                                        
+------------- ----------                                                        
+SQL_TEXT_FRAGMENT                                                               
+--------------------------------------------------------------------------------
+8ra471nafy8rx  96,742.50                                                        
+select * from jm  where (status not in (:"SYS_B_0",:"SY                         
+                                                                                
+f1xfww55nj0xp  69,762.63                                                        
+begin ctxsys.syncrn(:idxownid, :idxoname, :idxid, :ixpi                         
+                                                                                
+3xjy7vzrsu8k4  51,694.65                                                        
+select * from wfassignment  where (((assigncode=:"SYS_B                         
+                                                                                
+
+SQL_ID           ELAPSED                                                        
+------------- ----------                                                        
+SQL_TEXT_FRAGMENT                                                               
+--------------------------------------------------------------------------------
+6hnhqahphpk8n  41,571.45                                                        
+select free_mb from v$asm_diskgroup_stat where name=:1                          
+                                                                                
+2bq4wa3x523nv  41,229.57                                                        
+select * from dba_tablespace_usage_metrics where tables                         
+                                                                                
+a7m88wpm2pndn  35,672.75                                                        
+select * from workorder  where (orgid= :"SYS_B_00" ) an                         
+                                                                                
+
+SQL_ID           ELAPSED                                                        
+------------- ----------                                                        
+SQL_TEXT_FRAGMENT                                                               
+--------------------------------------------------------------------------------
+8n147vsbtg6b1  29,278.51                                                        
+BEGIN rebuild_indexes('MAXIMO'); END;                                           
+                                                                                
+4qqy46tt55t4a  18,572.45                                                        
+SELECT     s1.*,     (         SELECT             ( SUM                         
+                                                                                
+av3jp9pzytg3u  16,678.85                                                        
+call maximo_ts_job (  )                                                         
+                                                                                
+
+SQL_ID           ELAPSED                                                        
+------------- ----------                                                        
+SQL_TEXT_FRAGMENT                                                               
+--------------------------------------------------------------------------------
+4dt4jgb0x4d9b  15,511.99                                                        
+select * from workorder  where (orgid= :"SYS_B_00" ) an                         
+                                                                                
+f16212hyn8pxh  14,601.95                                                        
+SELECT sum(NVL(linecost,:"SYS_B_0")+NVL(TAX1,:"SYS_B_1"                         
+                                                                                
+91zj8xg5j2fky  13,381.37                                                        
+SELECT SUM (invreserve.reservedqty) AS reservedothersto                         
+                                                                                
+
+SQL_ID           ELAPSED                                                        
+------------- ----------                                                        
+SQL_TEXT_FRAGMENT                                                               
+--------------------------------------------------------------------------------
+4xwwaz18ktxzd  13,101.59                                                        
+update taskscheduler  set servername =  :1   , seed =                           
+                                                                                
+0za9fv0j1vgkk  11,706.88                                                        
+WITH MONITOR_DATA AS (SELECT * FROM TABLE(GV$(CURSOR( S                         
+                                                                                
+fxy40vgn5hufj  11,127.59                                                        
+SELECT ((SELECT MAX (SEQUENCE#) FROM GV$ARCHIVED_LOG WH                         
+                                                                                
+
+Specify the Sql id
+~~~~~~~~~~~~~~~~~~
+Enter value for sqlid: 8095qwck7qga2
+
+Sql Id specified: 8095qwck7qga2                                                 
+
+Tune the sql
+~~~~~~~~~~~~
+
+GENERAL INFORMATION SECTION                                                     
+------------------------------------------------------------------------------- 
+Tuning Task Name   : TASK_480026                                                
+Tuning Task Owner  : SYS                                                        
+Workload Type      : Single SQL Statement                                       
+Scope              : COMPREHENSIVE                                              
+Time Limit(seconds): 1800                                                       
+Completion Status  : INTERRUPTED                                                
+Started at         : 07/07/2022 13:20:30                                        
+Completed at       : 07/07/2022 13:50:35                                        
+                                                                                
+------------------------------------------------------------------------------- 
+Error: ORA-13639: The current operation was interrupted because it timed out.   
+
+------------------------------------------------------------------------------- 
+                                                                                
+------------------------------------------------------------------------------- 
+Schema Name: MAXIMO                                                             
+SQL ID     : 8095qwck7qga2                                                      
+SQL Text   : select * from workorder  where (((woclass = :"SYS_B_00" ) and      
+             istask = :"SYS_B_01" and siteid = :"SYS_B_02") and siteid =        
+             :"SYS_B_03" and woclass = :"SYS_B_04" and exists (select           
+             :"SYS_B_05" from wostatus where wostatus.siteid = :"SYS_B_06"      
+             and wostatus.ismobility = :"SYS_B_07" and wostatus.status =        
+             :"SYS_B_08" and wostatus.wonum=workorder.wonum)) and (exists       
+             ((select siteid from siteauth a1,groupuser b1,maxgroup             
+             m1,applicationauth  t1  where  b1.userid =  :"SYS_B_09"    and     
+
+             b1.groupname=a1.groupname  and b1.groupname=m1.groupname and       
+             m1.independent = :"SYS_B_10"  and a1.groupname = t1.groupname      
+             and  t1.app =  :"SYS_B_11"  and a1.siteid = workorder.siteid )     
+             union all (select siteid from siteauth a,groupuser b,maxgroup m    
+             where  b.userid =  :"SYS_B_12"    and b.groupname=a.groupname      
+             and b.groupname=m.groupname and m.independent = :"SYS_B_13"  and   
+              a.siteid = workorder.siteid and ( exists (select :"SYS_B_14"      
+             from  maxgroup m2,applicationauth c,groupuser d where  d.userid    
+             =  :"SYS_B_15"  and d.groupname = m2.groupname and d.groupname =   
+             c.groupname and  m2.independent = :"SYS_B_16" and c.app =          
+             :"SYS_B_17" ))) )) and (siteid=(select defsite from maxuser        
+             where userid= :"SYS_B_18" ) and (apptype  = :"SYS_B_19" or         
+             apptype = :"SYS_B_20") and (wonum like :"SYS_B_21" or wonum like   
+
+             :"SYS_B_22" or wonum like :"SYS_B_23" or wonum like :"SYS_B_24"    
+             ) and nvl(worktype,:"SYS_B_25") != :"SYS_B_26" and not exists      
+             (select :"SYS_B_27" from groupuser where groupname =:"SYS_B_28"    
+             and userid= :"SYS_B_29"  ))                                        
+Bind Variables :                                                                
+ 1 -  (VARCHAR2(32)):WORKORDER                                                  
+ 2 -  (NUMBER):0                                                                
+ 3 -  (VARCHAR2(32)):AADC                                                       
+ 4 -  (VARCHAR2(32)):AADC                                                       
+ 5 -  (VARCHAR2(32)):WORKORDER                                                  
+ 7 -  (VARCHAR2(32)):AADC                                                       
+ 8 -  (NUMBER):1                                                                
+ 9 -  (VARCHAR2(32)):WRAAP                                                      
+
+ 10 -  (VARCHAR2(32)):AE124665                                                  
+ 11 -  (NUMBER):1                                                               
+ 12 -  (VARCHAR2(32)):PLUSDWOTRK                                                
+ 13 -  (VARCHAR2(32)):AE124665                                                  
+ 14 -  (NUMBER):0                                                               
+ 16 -  (VARCHAR2(32)):AE124665                                                  
+ 17 -  (NUMBER):0                                                               
+ 18 -  (VARCHAR2(32)):PLUSDWOTRK                                                
+ 19 -  (VARCHAR2(32)):AE124665                                                  
+ 20 -  (VARCHAR2(32)):QRP                                                       
+ 21 -  (VARCHAR2(32)):T&D                                                       
+ 22 -  (VARCHAR2(32)):NN%                                                       
+ 23 -  (VARCHAR2(32)):DD%                                                       
+
+ 24 -  (VARCHAR2(32)):AA%                                                       
+ 25 -  (VARCHAR2(32)):M%                                                        
+ 26 -  (VARCHAR2(32)):x                                                         
+ 27 -  (VARCHAR2(32)):WQ                                                        
+ 29 -  (VARCHAR2(32)):BIDDERS                                                   
+ 30 -  (VARCHAR2(32)):AE124665                                                  
+                                                                                
+------------------------------------------------------------------------------- 
+FINDINGS SECTION (3 findings)                                                   
+------------------------------------------------------------------------------- 
+                                                                                
+1- SQL Profile Finding (see explain plans section below)                        
+--------------------------------------------------------                        
+
+  A potentially better execution plan was found for this statement.             
+                                                                                
+  Recommendation (estimated benefit: 99.51%)                                    
+  ------------------------------------------                                    
+  - Consider accepting the recommended SQL profile.                             
+    execute dbms_sqltune.accept_sql_profile(task_name => 'TASK_480026',         
+            task_owner => 'SYS', replace => TRUE);                              
+                                                                                
+2- Restructure SQL finding (see plan 1 in explain plans section)                
+----------------------------------------------------------------                
+  Predicate NVL("WORKORDER"."WORKTYPE",:B1)<>:B2 used at line ID 5 of the       
+  execution plan is an inequality condition on indexed column "WORKTYPE". This  
+  inequality condition prevents the optimizer from efficiently using indices    
+
+  on table "MAXIMO"."WORKORDER".                                                
+                                                                                
+  Recommendation                                                                
+  --------------                                                                
+  - Rewrite the predicate into an equivalent form to take advantage of          
+    indices.                                                                    
+                                                                                
+3- Restructure SQL finding (see plan 1 in explain plans section)                
+----------------------------------------------------------------                
+  Predicate NVL("WORKORDER"."WORKTYPE",:B1)<>:B2 used at line ID 5 of the       
+  execution plan is an inequality condition on indexed column "WORKTYPE". This  
+  inequality condition prevents the optimizer from efficiently using indices    
+  on table "MAXIMO"."WORKORDER".                                                
+
+                                                                                
+  Recommendation                                                                
+  --------------                                                                
+  - Rewrite the predicate into an equivalent form to take advantage of          
+    indices.                                                                    
+                                                                                
+------------------------------------------------------------------------------- 
+ERRORS SECTION                                                                  
+------------------------------------------------------------------------------- 
+- The current operation was interrupted because it timed out.                   
+                                                                                
+------------------------------------------------------------------------------- 
+EXPLAIN PLANS SECTION                                                           
+
+------------------------------------------------------------------------------- 
+                                                                                
+1- Original With Adjusted Cost                                                  
+------------------------------                                                  
+Plan hash value: 2512959246                                                     
+                                                                                
+--------------------------------------------------------------------------------
+------------------------------                                                  
+| Id  | Operation                             | Name                 | Rows  | B
+ytes | Cost (%CPU)| Time     |                                                  
+--------------------------------------------------------------------------------
+------------------------------                                                  
+|   0 | SELECT STATEMENT                      |                      |    72 | 7
+
+1856 |   372K  (1)| 00:00:15 |                                                  
+|*  1 |  FILTER                               |                      |       |  
+     |            |          |                                                  
+|*  2 |   HASH JOIN RIGHT SEMI                |                      |    72 | 7
+1856 |   372K  (1)| 00:00:15 |                                                  
+|*  3 |    TABLE ACCESS BY INDEX ROWID BATCHED| WOSTATUS             |    72 |  
+1728 |   758   (1)| 00:00:01 |                                                  
+|*  4 |     INDEX RANGE SCAN                  | WOSTATUS_NDX4        | 35203 |  
+     |   102   (0)| 00:00:01 |                                                  
+|*  5 |    TABLE ACCESS BY INDEX ROWID BATCHED| WORKORDER            | 28933 |  
+  26M|   371K  (1)| 00:00:15 |                                                  
+|*  6 |     INDEX RANGE SCAN                  | WORKORDER_NDX21      |   582K|  
+     |  3341   (1)| 00:00:01 |                                                  
+
+|   7 |      UNION-ALL                        |                      |       |  
+     |            |          |                                                  
+|   8 |       NESTED LOOPS SEMI               |                      |     1 |  
+  71 |     6   (0)| 00:00:01 |                                                  
+|   9 |        NESTED LOOPS SEMI              |                      |     1 |  
+  52 |     4   (0)| 00:00:01 |                                                  
+|  10 |         NESTED LOOPS                  |                      |     1 |  
+  37 |     3   (0)| 00:00:01 |                                                  
+|* 11 |          INDEX RANGE SCAN             | GROUPUSER_NDX1       |     5 |  
+ 100 |     3   (0)| 00:00:01 |                                                  
+|* 12 |          INDEX UNIQUE SCAN            | SITEAUTH_NDX1        |     1 |  
+  17 |     0   (0)| 00:00:01 |                                                  
+|* 13 |         INDEX RANGE SCAN              | MAXGROUP_NDX2        |    10 |  
+
+ 150 |     1   (0)| 00:00:01 |                                                  
+|* 14 |        INDEX RANGE SCAN               | APPLICATIONAUTH_NDX2 |  8990 |  
+ 166K|     2   (0)| 00:00:01 |                                                  
+|* 15 |       FILTER                          |                      |       |  
+     |            |          |                                                  
+|  16 |        NESTED LOOPS SEMI              |                      |     1 |  
+  52 |     4   (0)| 00:00:01 |                                                  
+|  17 |         NESTED LOOPS                  |                      |     1 |  
+  37 |     3   (0)| 00:00:01 |                                                  
+|* 18 |          INDEX RANGE SCAN             | GROUPUSER_NDX1       |     5 |  
+ 100 |     3   (0)| 00:00:01 |                                                  
+|* 19 |          INDEX UNIQUE SCAN            | SITEAUTH_NDX1        |     1 |  
+  17 |     0   (0)| 00:00:01 |                                                  
+
+|* 20 |         INDEX RANGE SCAN              | MAXGROUP_NDX2        |   640 |  
+9600 |     1   (0)| 00:00:01 |                                                  
+|  21 |        NESTED LOOPS SEMI              |                      |     4 |  
+ 216 |    15   (0)| 00:00:01 |                                                  
+|  22 |         NESTED LOOPS SEMI             |                      |     4 |  
+ 140 |     7   (0)| 00:00:01 |                                                  
+|* 23 |          INDEX RANGE SCAN             | GROUPUSER_NDX1       |     4 |  
+  80 |     3   (0)| 00:00:01 |                                                  
+|* 24 |          INDEX RANGE SCAN             | MAXGROUP_NDX2        |   325 |  
+4875 |     1   (0)| 00:00:01 |                                                  
+|* 25 |         INDEX RANGE SCAN              | APPLICATIONAUTH_NDX2 |  8990 |  
+ 166K|     2   (0)| 00:00:01 |                                                  
+|  26 |      TABLE ACCESS BY INDEX ROWID      | MAXUSER              |     1 |  
+
+  18 |     2   (0)| 00:00:01 |                                                  
+|* 27 |       INDEX UNIQUE SCAN               | MAXUSER_NDX1         |     1 |  
+     |     1   (0)| 00:00:01 |                                                  
+|* 28 |   INDEX UNIQUE SCAN                   | GROUPUSER_NDX1       |     1 |  
+  20 |     2   (0)| 00:00:01 |                                                  
+--------------------------------------------------------------------------------
+------------------------------                                                  
+                                                                                
+Predicate Information (identified by operation id):                             
+---------------------------------------------------                             
+                                                                                
+   1 - filter( NOT EXISTS (SELECT /*+ OPT_ESTIMATE (@"SEL$7" INDEX_SCAN "GROUPUS
+ER"@"SEL$7"                                                                     
+
+              "GROUPUSER_NDX2" SCALE_ROWS=3.862730 ) INDEX ("GROUPUSER" "GROUPUS
+ER_NDX1") */ 0 FROM "GROUPUSER"                                                 
+              "GROUPUSER" WHERE "GROUPNAME"=:SYS_B_28 AND "USERID"=:SYS_B_29) AN
+D :SYS_B_04=:SYS_B_00 AND                                                       
+              :SYS_B_03=:SYS_B_02)                                              
+   2 - access("WOSTATUS"."WONUM"="WORKORDER"."WONUM")                           
+   3 - filter("WOSTATUS"."STATUS"=:SYS_B_08)                                    
+   4 - access("WOSTATUS"."SITEID"=:SYS_B_06 AND "WOSTATUS"."ISMOBILITY"=:SYS_B_0
+7)                                                                              
+   5 - filter(("APPTYPE"=:SYS_B_19 OR "APPTYPE"=:SYS_B_20) AND NVL("WORKTYPE",:S
+YS_B_25)<>:SYS_B_26)                                                            
+   6 - access("WOCLASS"=:SYS_B_00 AND "ISTASK"=:SYS_B_01 AND "SITEID"= (SELECT /
+*+ PUSH_SUBQ                                                                    
+
+              INDEX_RS_ASC ("MAXUSER" "MAXUSER_NDX1") */ "DEFSITE" FROM "MAXUSER
+" "MAXUSER" WHERE                                                               
+              "USERID"=:SYS_B_18))                                              
+       filter("SITEID"=:SYS_B_02 AND ("WONUM" LIKE :SYS_B_22 OR "WONUM" LIKE :SY
+S_B_23 OR "WONUM"                                                               
+              LIKE :SYS_B_21 OR "WONUM" LIKE :SYS_B_24) AND  EXISTS ( (SELECT /*
++ LEADING ("B1" "A1" "M1" "T1")                                                 
+              PARTIAL_JOIN ("T1") USE_NL ("T1") INDEX ("T1" "APPLICATIONAUTH_NDX
+2") PARTIAL_JOIN ("M1") USE_NL                                                  
+              ("M1") INDEX ("M1" "MAXGROUP_NDX2") OPT_ESTIMATE (@"SEL$3" INDEX_S
+CAN "B1"@"SEL$3" "GROUPUSER_NDX2"                                               
+              SCALE_ROWS=3.862730 ) OPT_ESTIMATE (@"SEL$3" INDEX_SCAN "B1"@"SEL$
+3" "GROUPUSER_NDX1"                                                             
+
+              SCALE_ROWS=3.862730 ) OPT_ESTIMATE (@"SEL$3" INDEX_SKIP_SCAN "B1"@
+"SEL$3" "GROUPUSER_NDX3"                                                        
+              SCALE_ROWS=3.869530 ) OPT_ESTIMATE (@"SEL$3" TABLE "B1"@"SEL$3" SC
+ALE_ROWS=3.869530 ) INDEX ("B1"                                                 
+              "GROUPUSER_NDX1") USE_NL ("A1") INDEX ("A1" "SITEAUTH_NDX1") */ "S
+ITEID" FROM "APPLICATIONAUTH"                                                   
+              "T1","MAXGROUP" "M1","GROUPUSER" "B1","SITEAUTH" "A1" WHERE "A1"."
+SITEID"=:B1 AND                                                                 
+              "B1"."GROUPNAME"="A1"."GROUPNAME" AND "B1"."USERID"=:SYS_B_09 AND 
+"B1"."GROUPNAME"="M1"."GROUPNAME"                                               
+              AND "M1"."INDEPENDENT"=:SYS_B_10 AND "A1"."GROUPNAME"="T1"."GROUPN
+AME" AND "T1"."APP"=:SYS_B_11)                                                  
+              UNION ALL  (SELECT /*+ LEADING ("B" "A" "M") PARTIAL_JOIN ("M") US
+
+E_NL ("M") INDEX ("M"                                                           
+              "MAXGROUP_NDX2") OPT_ESTIMATE (@"SEL$4" TABLE "B"@"SEL$4" SCALE_RO
+WS=3.869530 ) OPT_ESTIMATE                                                      
+              (@"SEL$4" INDEX_SCAN "B"@"SEL$4" "GROUPUSER_NDX2" SCALE_ROWS=3.862
+730 ) OPT_ESTIMATE (@"SEL$4"                                                    
+              INDEX_SKIP_SCAN "B"@"SEL$4" "GROUPUSER_NDX3" SCALE_ROWS=3.869530 )
+ OPT_ESTIMATE (@"SEL$4" INDEX_SCAN                                              
+              "B"@"SEL$4" "GROUPUSER_NDX1" SCALE_ROWS=3.862730 ) INDEX ("B" "GRO
+UPUSER_NDX1") USE_NL ("A") INDEX                                                
+              ("A" "SITEAUTH_NDX1") */ "SITEID" FROM "MAXGROUP" "M","GROUPUSER" 
+"B","SITEAUTH" "A" WHERE  EXISTS                                                
+              (SELECT /*+ LEADING ("D" "M2" "C") OPT_ESTIMATE (@"SEL$5" TABLE "D
+"@"SEL$5" SCALE_ROWS=3.869530 )                                                 
+
+              OPT_ESTIMATE (@"SEL$5" INDEX_SKIP_SCAN "D"@"SEL$5" "GROUPUSER_NDX3
+" SCALE_ROWS=3.869530 )                                                         
+              OPT_ESTIMATE (@"SEL$5" INDEX_SCAN "D"@"SEL$5" "GROUPUSER_NDX1" SCA
+LE_ROWS=3.862730 ) OPT_ESTIMATE                                                 
+              (@"SEL$5" INDEX_SCAN "D"@"SEL$5" "GROUPUSER_NDX2" SCALE_ROWS=3.862
+730 ) INDEX ("D" "GROUPUSER_NDX1")                                              
+              PARTIAL_JOIN ("C") USE_NL ("C") INDEX ("C" "APPLICATIONAUTH_NDX2")
+ PARTIAL_JOIN ("M2") USE_NL ("M2")                                              
+              INDEX ("M2" "MAXGROUP_NDX2") */ 0 FROM "GROUPUSER" "D","APPLICATIO
+NAUTH" "C","MAXGROUP" "M2" WHERE                                                
+              "D"."GROUPNAME"="M2"."GROUPNAME" AND "M2"."INDEPENDENT"=:SYS_B_16 
+AND "D"."GROUPNAME"="C"."GROUPNAME"                                             
+              AND "C"."APP"=:SYS_B_17 AND "D"."USERID"=:SYS_B_15) AND "A"."SITEI
+
+D"=:B1 AND                                                                      
+              "B"."GROUPNAME"="A"."GROUPNAME" AND "B"."USERID"=:SYS_B_12 AND "B"
+."GROUPNAME"="M"."GROUPNAME" AND                                                
+              "M"."INDEPENDENT"=:SYS_B_13)))                                    
+  11 - access("B1"."USERID"=:SYS_B_09)                                          
+  12 - access("B1"."GROUPNAME"="A1"."GROUPNAME" AND "A1"."SITEID"=:B1)          
+  13 - access("M1"."INDEPENDENT"=:SYS_B_10 AND "B1"."GROUPNAME"="M1"."GROUPNAME"
+)                                                                               
+  14 - access("T1"."APP"=:SYS_B_11 AND "A1"."GROUPNAME"="T1"."GROUPNAME")       
+  15 - filter( EXISTS (SELECT /*+ LEADING ("D" "M2" "C") OPT_ESTIMATE (@"SEL$5" 
+TABLE "D"@"SEL$5"                                                               
+              SCALE_ROWS=3.869530 ) OPT_ESTIMATE (@"SEL$5" INDEX_SKIP_SCAN "D"@"
+SEL$5" "GROUPUSER_NDX3"                                                         
+
+              SCALE_ROWS=3.869530 ) OPT_ESTIMATE (@"SEL$5" INDEX_SCAN "D"@"SEL$5
+" "GROUPUSER_NDX1"                                                              
+              SCALE_ROWS=3.862730 ) OPT_ESTIMATE (@"SEL$5" INDEX_SCAN "D"@"SEL$5
+" "GROUPUSER_NDX2"                                                              
+              SCALE_ROWS=3.862730 ) INDEX ("D" "GROUPUSER_NDX1") PARTIAL_JOIN ("
+C") USE_NL ("C") INDEX ("C"                                                     
+              "APPLICATIONAUTH_NDX2") PARTIAL_JOIN ("M2") USE_NL ("M2") INDEX ("
+M2" "MAXGROUP_NDX2") */ 0 FROM                                                  
+              "GROUPUSER" "D","APPLICATIONAUTH" "C","MAXGROUP" "M2" WHERE "D"."G
+ROUPNAME"="M2"."GROUPNAME" AND                                                  
+              "M2"."INDEPENDENT"=:SYS_B_16 AND "D"."GROUPNAME"="C"."GROUPNAME" A
+ND "C"."APP"=:SYS_B_17 AND                                                      
+              "D"."USERID"=:SYS_B_15))                                          
+
+  18 - access("B"."USERID"=:SYS_B_12)                                           
+  19 - access("B"."GROUPNAME"="A"."GROUPNAME" AND "A"."SITEID"=:B1)             
+  20 - access("M"."INDEPENDENT"=:SYS_B_13 AND "B"."GROUPNAME"="M"."GROUPNAME")  
+  23 - access("D"."USERID"=:SYS_B_15)                                           
+  24 - access("M2"."INDEPENDENT"=:SYS_B_16 AND "D"."GROUPNAME"="M2"."GROUPNAME")
+                                                                                
+  25 - access("C"."APP"=:SYS_B_17 AND "D"."GROUPNAME"="C"."GROUPNAME")          
+  27 - access("USERID"=:SYS_B_18)                                               
+  28 - access("USERID"=:SYS_B_29 AND "GROUPNAME"=:SYS_B_28)                     
+                                                                                
+Hint Report (identified by operation id / Query Block Name / Object Alias):     
+Total hints for statement: 1 (U - Unused (1))                                   
+---------------------------------------------------------------------------     
+
+                                                                                
+   0 -  STATEMENT                                                               
+         U -  OPTIMIZER_FEATURES_ENABLE(default) / hint overridden by another in
+ parent query block                                                             
+                                                                                
+2- Using SQL Profile                                                            
+--------------------                                                            
+Plan hash value: 1647844217                                                     
+                                                                                
+--------------------------------------------------------------------------------
+-----------------------------------                                             
+| Id  | Operation                                  | Name                 | Rows
+  | Bytes | Cost (%CPU)| Time     |                                             
+
+--------------------------------------------------------------------------------
+-----------------------------------                                             
+|   0 | SELECT STATEMENT                           |                      |   52
+7 |    26M|  1794   (1)| 00:00:01 |                                             
+|   1 |  VIEW                                      | VW_ORE_E2019943      |   52
+7 |    26M|  1794   (1)| 00:00:01 |                                             
+|   2 |   UNION-ALL                                |                      |     
+  |       |            |          |                                             
+|*  3 |    FILTER                                  |                      |     
+  |       |            |          |                                             
+|*  4 |     HASH JOIN RIGHT SEMI                   |                      |    3
+2 | 32128 |   367   (1)| 00:00:01 |                                             
+|   5 |      VIEW                                  | VW_SQ_1              |     
+
+2 |    12 |    18   (0)| 00:00:01 |                                             
+|   6 |       UNION-ALL                            |                      |     
+  |       |            |          |                                             
+|   7 |        NESTED LOOPS SEMI                   |                      |     
+1 |    71 |     6   (0)| 00:00:01 |                                             
+|   8 |         NESTED LOOPS SEMI                  |                      |     
+1 |    52 |     4   (0)| 00:00:01 |                                             
+|   9 |          NESTED LOOPS                      |                      |     
+1 |    37 |     3   (0)| 00:00:01 |                                             
+|* 10 |           INDEX RANGE SCAN                 | GROUPUSER_NDX1       |     
+5 |   100 |     3   (0)| 00:00:01 |                                             
+|* 11 |           INDEX UNIQUE SCAN                | SITEAUTH_NDX1        |     
+1 |    17 |     0   (0)| 00:00:01 |                                             
+
+|* 12 |          INDEX RANGE SCAN                  | MAXGROUP_NDX2        |    1
+0 |   150 |     1   (0)| 00:00:01 |                                             
+|* 13 |         INDEX RANGE SCAN                   | APPLICATIONAUTH_NDX2 |  899
+0 |   166K|     2   (0)| 00:00:01 |                                             
+|* 14 |        FILTER                              |                      |     
+  |       |            |          |                                             
+|  15 |         NESTED LOOPS SEMI                  |                      |     
+1 |    52 |     4   (0)| 00:00:01 |                                             
+|  16 |          NESTED LOOPS                      |                      |     
+1 |    37 |     3   (0)| 00:00:01 |                                             
+|* 17 |           INDEX RANGE SCAN                 | GROUPUSER_NDX1       |     
+5 |   100 |     3   (0)| 00:00:01 |                                             
+|* 18 |           INDEX UNIQUE SCAN                | SITEAUTH_NDX1        |     
+
+1 |    17 |     0   (0)| 00:00:01 |                                             
+|* 19 |          INDEX RANGE SCAN                  | MAXGROUP_NDX2        |   64
+0 |  9600 |     1   (0)| 00:00:01 |                                             
+|  20 |         NESTED LOOPS SEMI                  |                      |     
+2 |   108 |     8   (0)| 00:00:01 |                                             
+|  21 |          MERGE JOIN                        |                      |     
+2 |    78 |     7   (0)| 00:00:01 |                                             
+|* 22 |           INDEX RANGE SCAN                 | APPLICATIONAUTH_NDX2 |   12
+5 |  2375 |     4   (0)| 00:00:01 |                                             
+|* 23 |           SORT JOIN                        |                      |     
+5 |   100 |     3   (0)| 00:00:01 |                                             
+|* 24 |            INDEX RANGE SCAN                | GROUPUSER_NDX1       |     
+5 |   100 |     3   (0)| 00:00:01 |                                             
+
+|* 25 |          TABLE ACCESS BY INDEX ROWID       | MAXGROUP             |   32
+1 |  4815 |     1   (0)| 00:00:01 |                                             
+|* 26 |           INDEX UNIQUE SCAN                | MAXGROUP_NDX1        |     
+1 |       |     0   (0)| 00:00:01 |                                             
+|  27 |      NESTED LOOPS                          |                      |    3
+2 | 31936 |   349   (1)| 00:00:01 |                                             
+|  28 |       NESTED LOOPS                         |                      |    3
+2 | 31936 |   349   (1)| 00:00:01 |                                             
+|  29 |        SORT UNIQUE                         |                      |    3
+2 |   768 |   316   (1)| 00:00:01 |                                             
+|* 30 |         TABLE ACCESS BY INDEX ROWID BATCHED| WOSTATUS             |    3
+2 |   768 |   316   (1)| 00:00:01 |                                             
+|* 31 |          INDEX RANGE SCAN                  | WOSTATUS_NDX4        | 1455
+
+3 |       |    44   (0)| 00:00:01 |                                             
+|* 32 |        INDEX UNIQUE SCAN                   | WORKORDER_NDX1       |     
+1 |       |     1   (0)| 00:00:01 |                                             
+|  33 |         TABLE ACCESS BY INDEX ROWID        | MAXUSER              |     
+1 |    18 |     2   (0)| 00:00:01 |                                             
+|* 34 |          INDEX UNIQUE SCAN                 | MAXUSER_NDX1         |     
+1 |       |     1   (0)| 00:00:01 |                                             
+|* 35 |       TABLE ACCESS BY INDEX ROWID          | WORKORDER            |     
+1 |   974 |     2   (0)| 00:00:01 |                                             
+|* 36 |     INDEX UNIQUE SCAN                      | GROUPUSER_NDX1       |     
+1 |    20 |     2   (0)| 00:00:01 |                                             
+|* 37 |    FILTER                                  |                      |     
+  |       |            |          |                                             
+
+|* 38 |     HASH JOIN RIGHT SEMI                   |                      |   29
+9 |   293K|   635   (1)| 00:00:01 |                                             
+|  39 |      VIEW                                  | VW_SQ_1              |     
+2 |    12 |    18   (0)| 00:00:01 |                                             
+|  40 |       UNION-ALL                            |                      |     
+  |       |            |          |                                             
+|  41 |        NESTED LOOPS SEMI                   |                      |     
+1 |    71 |     6   (0)| 00:00:01 |                                             
+|  42 |         NESTED LOOPS SEMI                  |                      |     
+1 |    52 |     4   (0)| 00:00:01 |                                             
+|  43 |          NESTED LOOPS                      |                      |     
+1 |    37 |     3   (0)| 00:00:01 |                                             
+|* 44 |           INDEX RANGE SCAN                 | GROUPUSER_NDX1       |     
+
+5 |   100 |     3   (0)| 00:00:01 |                                             
+|* 45 |           INDEX UNIQUE SCAN                | SITEAUTH_NDX1        |     
+1 |    17 |     0   (0)| 00:00:01 |                                             
+|* 46 |          INDEX RANGE SCAN                  | MAXGROUP_NDX2        |    1
+0 |   150 |     1   (0)| 00:00:01 |                                             
+|* 47 |         INDEX RANGE SCAN                   | APPLICATIONAUTH_NDX2 |  899
+0 |   166K|     2   (0)| 00:00:01 |                                             
+|* 48 |        FILTER                              |                      |     
+  |       |            |          |                                             
+|  49 |         NESTED LOOPS SEMI                  |                      |     
+1 |    52 |     4   (0)| 00:00:01 |                                             
+|  50 |          NESTED LOOPS                      |                      |     
+1 |    37 |     3   (0)| 00:00:01 |                                             
+
+|* 51 |           INDEX RANGE SCAN                 | GROUPUSER_NDX1       |     
+5 |   100 |     3   (0)| 00:00:01 |                                             
+|* 52 |           INDEX UNIQUE SCAN                | SITEAUTH_NDX1        |     
+1 |    17 |     0   (0)| 00:00:01 |                                             
+|* 53 |          INDEX RANGE SCAN                  | MAXGROUP_NDX2        |   64
+0 |  9600 |     1   (0)| 00:00:01 |                                             
+|  54 |         NESTED LOOPS SEMI                  |                      |     
+2 |   108 |     8   (0)| 00:00:01 |                                             
+|  55 |          MERGE JOIN                        |                      |     
+2 |    78 |     7   (0)| 00:00:01 |                                             
+|* 56 |           INDEX RANGE SCAN                 | APPLICATIONAUTH_NDX2 |   12
+5 |  2375 |     4   (0)| 00:00:01 |                                             
+|* 57 |           SORT JOIN                        |                      |     
+
+5 |   100 |     3   (0)| 00:00:01 |                                             
+|* 58 |            INDEX RANGE SCAN                | GROUPUSER_NDX1       |     
+5 |   100 |     3   (0)| 00:00:01 |                                             
+|* 59 |          TABLE ACCESS BY INDEX ROWID       | MAXGROUP             |   32
+1 |  4815 |     1   (0)| 00:00:01 |                                             
+|* 60 |           INDEX UNIQUE SCAN                | MAXGROUP_NDX1        |     
+1 |       |     0   (0)| 00:00:01 |                                             
+|  61 |      NESTED LOOPS                          |                      |   29
+9 |   291K|   617   (1)| 00:00:01 |                                             
+|  62 |       NESTED LOOPS                         |                      |   29
+9 |   291K|   617   (1)| 00:00:01 |                                             
+|  63 |        SORT UNIQUE                         |                      |   29
+9 |  7176 |   316   (1)| 00:00:01 |                                             
+
+|* 64 |         TABLE ACCESS BY INDEX ROWID BATCHED| WOSTATUS             |   29
+9 |  7176 |   316   (1)| 00:00:01 |                                             
+|* 65 |          INDEX RANGE SCAN                  | WOSTATUS_NDX4        | 1455
+3 |       |    44   (0)| 00:00:01 |                                             
+|* 66 |        INDEX UNIQUE SCAN                   | WORKORDER_NDX1       |     
+1 |       |     1   (0)| 00:00:01 |                                             
+|  67 |         TABLE ACCESS BY INDEX ROWID        | MAXUSER              |     
+1 |    18 |     2   (0)| 00:00:01 |                                             
+|* 68 |          INDEX UNIQUE SCAN                 | MAXUSER_NDX1         |     
+1 |       |     1   (0)| 00:00:01 |                                             
+|* 69 |       TABLE ACCESS BY INDEX ROWID          | WORKORDER            |     
+1 |   974 |     2   (0)| 00:00:01 |                                             
+|* 70 |     INDEX UNIQUE SCAN                      | GROUPUSER_NDX1       |     
+
+1 |    20 |     2   (0)| 00:00:01 |                                             
+|* 71 |    FILTER                                  |                      |     
+  |       |            |          |                                             
+|* 72 |     HASH JOIN RIGHT SEMI                   |                      |   19
+5 |   191K|   531   (1)| 00:00:01 |                                             
+|  73 |      VIEW                                  | VW_SQ_1              |     
+2 |    12 |    18   (0)| 00:00:01 |                                             
+|  74 |       UNION-ALL                            |                      |     
+  |       |            |          |                                             
+|  75 |        NESTED LOOPS SEMI                   |                      |     
+1 |    71 |     6   (0)| 00:00:01 |                                             
+|  76 |         NESTED LOOPS SEMI                  |                      |     
+1 |    52 |     4   (0)| 00:00:01 |                                             
+
+|  77 |          NESTED LOOPS                      |                      |     
+1 |    37 |     3   (0)| 00:00:01 |                                             
+|* 78 |           INDEX RANGE SCAN                 | GROUPUSER_NDX1       |     
+5 |   100 |     3   (0)| 00:00:01 |                                             
+|* 79 |           INDEX UNIQUE SCAN                | SITEAUTH_NDX1        |     
+1 |    17 |     0   (0)| 00:00:01 |                                             
+|* 80 |          INDEX RANGE SCAN                  | MAXGROUP_NDX2        |    1
+0 |   150 |     1   (0)| 00:00:01 |                                             
+|* 81 |         INDEX RANGE SCAN                   | APPLICATIONAUTH_NDX2 |  899
+0 |   166K|     2   (0)| 00:00:01 |                                             
+|* 82 |        FILTER                              |                      |     
+  |       |            |          |                                             
+|  83 |         NESTED LOOPS SEMI                  |                      |     
+
+1 |    52 |     4   (0)| 00:00:01 |                                             
+|  84 |          NESTED LOOPS                      |                      |     
+1 |    37 |     3   (0)| 00:00:01 |                                             
+|* 85 |           INDEX RANGE SCAN                 | GROUPUSER_NDX1       |     
+5 |   100 |     3   (0)| 00:00:01 |                                             
+|* 86 |           INDEX UNIQUE SCAN                | SITEAUTH_NDX1        |     
+1 |    17 |     0   (0)| 00:00:01 |                                             
+|* 87 |          INDEX RANGE SCAN                  | MAXGROUP_NDX2        |   64
+0 |  9600 |     1   (0)| 00:00:01 |                                             
+|  88 |         NESTED LOOPS SEMI                  |                      |     
+2 |   108 |     8   (0)| 00:00:01 |                                             
+|  89 |          MERGE JOIN                        |                      |     
+2 |    78 |     7   (0)| 00:00:01 |                                             
+
+|* 90 |           INDEX RANGE SCAN                 | APPLICATIONAUTH_NDX2 |   12
+5 |  2375 |     4   (0)| 00:00:01 |                                             
+|* 91 |           SORT JOIN                        |                      |     
+5 |   100 |     3   (0)| 00:00:01 |                                             
+|* 92 |            INDEX RANGE SCAN                | GROUPUSER_NDX1       |     
+5 |   100 |     3   (0)| 00:00:01 |                                             
+|* 93 |          TABLE ACCESS BY INDEX ROWID       | MAXGROUP             |   32
+1 |  4815 |     1   (0)| 00:00:01 |                                             
+|* 94 |           INDEX UNIQUE SCAN                | MAXGROUP_NDX1        |     
+1 |       |     0   (0)| 00:00:01 |                                             
+|  95 |      NESTED LOOPS                          |                      |   19
+5 |   190K|   513   (1)| 00:00:01 |                                             
+|  96 |       NESTED LOOPS                         |                      |   19
+
+5 |   190K|   513   (1)| 00:00:01 |                                             
+|  97 |        SORT UNIQUE                         |                      |   19
+5 |  4680 |   316   (1)| 00:00:01 |                                             
+|* 98 |         TABLE ACCESS BY INDEX ROWID BATCHED| WOSTATUS             |   19
+5 |  4680 |   316   (1)| 00:00:01 |                                             
+|* 99 |          INDEX RANGE SCAN                  | WOSTATUS_NDX4        | 1455
+3 |       |    44   (0)| 00:00:01 |                                             
+|*100 |        INDEX UNIQUE SCAN                   | WORKORDER_NDX1       |     
+1 |       |     1   (0)| 00:00:01 |                                             
+| 101 |         TABLE ACCESS BY INDEX ROWID        | MAXUSER              |     
+1 |    18 |     2   (0)| 00:00:01 |                                             
+|*102 |          INDEX UNIQUE SCAN                 | MAXUSER_NDX1         |     
+1 |       |     1   (0)| 00:00:01 |                                             
+
+|*103 |       TABLE ACCESS BY INDEX ROWID          | WORKORDER            |     
+1 |   974 |     2   (0)| 00:00:01 |                                             
+|*104 |     INDEX UNIQUE SCAN                      | GROUPUSER_NDX1       |     
+1 |    20 |     2   (0)| 00:00:01 |                                             
+|*105 |    FILTER                                  |                      |     
+  |       |            |          |                                             
+| 106 |     NESTED LOOPS SEMI                      |                      |     
+1 |  1004 |   245   (2)| 00:00:01 |                                             
+| 107 |      NESTED LOOPS                          |                      |     
+5 |  4900 |   225   (2)| 00:00:01 |                                             
+| 108 |       VIEW                                 | VW_SQ_1              |     
+2 |    12 |    18   (0)| 00:00:01 |                                             
+| 109 |        HASH UNIQUE                         |                      |     
+
+1 |   246 |    18   (0)| 00:00:01 |                                             
+| 110 |         UNION-ALL                          |                      |     
+  |       |            |          |                                             
+| 111 |          NESTED LOOPS SEMI                 |                      |     
+1 |    71 |     6   (0)| 00:00:01 |                                             
+| 112 |           NESTED LOOPS SEMI                |                      |     
+1 |    52 |     4   (0)| 00:00:01 |                                             
+| 113 |            NESTED LOOPS                    |                      |     
+1 |    37 |     3   (0)| 00:00:01 |                                             
+|*114 |             INDEX RANGE SCAN               | GROUPUSER_NDX1       |     
+5 |   100 |     3   (0)| 00:00:01 |                                             
+|*115 |             INDEX UNIQUE SCAN              | SITEAUTH_NDX1        |     
+1 |    17 |     0   (0)| 00:00:01 |                                             
+
+|*116 |            INDEX RANGE SCAN                | MAXGROUP_NDX2        |    1
+0 |   150 |     1   (0)| 00:00:01 |                                             
+|*117 |           INDEX RANGE SCAN                 | APPLICATIONAUTH_NDX2 |  899
+0 |   166K|     2   (0)| 00:00:01 |                                             
+|*118 |          FILTER                            |                      |     
+  |       |            |          |                                             
+| 119 |           NESTED LOOPS SEMI                |                      |     
+1 |    52 |     4   (0)| 00:00:01 |                                             
+| 120 |            NESTED LOOPS                    |                      |     
+1 |    37 |     3   (0)| 00:00:01 |                                             
+|*121 |             INDEX RANGE SCAN               | GROUPUSER_NDX1       |     
+5 |   100 |     3   (0)| 00:00:01 |                                             
+|*122 |             INDEX UNIQUE SCAN              | SITEAUTH_NDX1        |     
+
+1 |    17 |     0   (0)| 00:00:01 |                                             
+|*123 |            INDEX RANGE SCAN                | MAXGROUP_NDX2        |   64
+0 |  9600 |     1   (0)| 00:00:01 |                                             
+| 124 |           NESTED LOOPS SEMI                |                      |     
+2 |   108 |     8   (0)| 00:00:01 |                                             
+| 125 |            MERGE JOIN                      |                      |     
+2 |    78 |     7   (0)| 00:00:01 |                                             
+|*126 |             INDEX RANGE SCAN               | APPLICATIONAUTH_NDX2 |   12
+5 |  2375 |     4   (0)| 00:00:01 |                                             
+|*127 |             SORT JOIN                      |                      |     
+5 |   100 |     3   (0)| 00:00:01 |                                             
+|*128 |              INDEX RANGE SCAN              | GROUPUSER_NDX1       |     
+5 |   100 |     3   (0)| 00:00:01 |                                             
+
+|*129 |            TABLE ACCESS BY INDEX ROWID     | MAXGROUP             |   32
+1 |  4815 |     1   (0)| 00:00:01 |                                             
+|*130 |             INDEX UNIQUE SCAN              | MAXGROUP_NDX1        |     
+1 |       |     0   (0)| 00:00:01 |                                             
+|*131 |       TABLE ACCESS BY INDEX ROWID BATCHED  | WORKORDER            |     
+5 |  4870 |   206   (1)| 00:00:01 |                                             
+|*132 |        INDEX SKIP SCAN                     | WORKORDER_NDX21      |   31
+7 |       |     4  (25)| 00:00:01 |                                             
+| 133 |         TABLE ACCESS BY INDEX ROWID        | MAXUSER              |     
+1 |    18 |     2   (0)| 00:00:01 |                                             
+|*134 |          INDEX UNIQUE SCAN                 | MAXUSER_NDX1         |     
+1 |       |     1   (0)| 00:00:01 |                                             
+|*135 |      TABLE ACCESS BY INDEX ROWID BATCHED   | WOSTATUS             |     
+
+1 |    24 |     4   (0)| 00:00:01 |                                             
+|*136 |       INDEX RANGE SCAN                     | WOSTATUS_NDX2        |     
+1 |       |     3   (0)| 00:00:01 |                                             
+|*137 |     INDEX UNIQUE SCAN                      | GROUPUSER_NDX1       |     
+1 |    20 |     2   (0)| 00:00:01 |                                             
+--------------------------------------------------------------------------------
+-----------------------------------                                             
+                                                                                
+Predicate Information (identified by operation id):                             
+---------------------------------------------------                             
+                                                                                
+   3 - filter( NOT EXISTS (SELECT /*+ OPT_ESTIMATE (@"SEL$7" INDEX_SCAN "GROUPUS
+ER"@"SEL$A40D62E7"                                                              
+
+              "GROUPUSER_NDX2" SCALE_ROWS=3.862730 ) */ 0 FROM "GROUPUSER" "GROU
+PUSER" WHERE "GROUPNAME"=:SYS_B_28 AND                                          
+              "USERID"=:SYS_B_29) AND :SYS_B_04=:SYS_B_00 AND :SYS_B_03=:SYS_B_0
+2)                                                                              
+   4 - access("VW_COL_1"="WORKORDER"."SITEID")                                  
+  10 - access("B1"."USERID"=:SYS_B_09)                                          
+  11 - access("B1"."GROUPNAME"="A1"."GROUPNAME" AND "A1"."SITEID"=:SYS_B_02)    
+  12 - access("M1"."INDEPENDENT"=:SYS_B_10 AND "B1"."GROUPNAME"="M1"."GROUPNAME"
+)                                                                               
+  13 - access("T1"."APP"=:SYS_B_11 AND "A1"."GROUPNAME"="T1"."GROUPNAME")       
+  14 - filter( EXISTS (SELECT /*+ OPT_ESTIMATE (@"SEL$5" TABLE "D"@"SEL$5" SCALE
+_ROWS=3.869530 )                                                                
+              OPT_ESTIMATE (@"SEL$5" INDEX_SKIP_SCAN "D"@"SEL$5" "GROUPUSER_NDX3
+
+" SCALE_ROWS=3.869530 ) OPT_ESTIMATE                                            
+              (@"SEL$5" INDEX_SCAN "D"@"SEL$5" "GROUPUSER_NDX1" SCALE_ROWS=3.862
+730 ) OPT_ESTIMATE (@"SEL$5" INDEX_SCAN                                         
+              "D"@"SEL$5" "GROUPUSER_NDX2" SCALE_ROWS=3.862730 ) */ 0 FROM "GROU
+PUSER" "D","APPLICATIONAUTH"                                                    
+              "C","MAXGROUP" "M2" WHERE "D"."GROUPNAME"="M2"."GROUPNAME" AND "M2
+"."INDEPENDENT"=:SYS_B_16 AND                                                   
+              "C"."APP"=:SYS_B_17 AND "D"."USERID"=:SYS_B_15 AND "D"."GROUPNAME"
+="C"."GROUPNAME"))                                                              
+  17 - access("B"."USERID"=:SYS_B_12)                                           
+  18 - access("B"."GROUPNAME"="A"."GROUPNAME" AND "A"."SITEID"=:SYS_B_02)       
+  19 - access("M"."INDEPENDENT"=:SYS_B_13 AND "B"."GROUPNAME"="M"."GROUPNAME")  
+  22 - access("C"."APP"=:SYS_B_17)                                              
+
+  23 - access("D"."GROUPNAME"="C"."GROUPNAME")                                  
+       filter("D"."GROUPNAME"="C"."GROUPNAME")                                  
+  24 - access("D"."USERID"=:SYS_B_15)                                           
+  25 - filter("M2"."INDEPENDENT"=:SYS_B_16)                                     
+  26 - access("D"."GROUPNAME"="M2"."GROUPNAME")                                 
+  30 - filter("WOSTATUS"."STATUS"=:SYS_B_08 AND "WOSTATUS"."WONUM" LIKE :SYS_B_2
+1)                                                                              
+  31 - access("WOSTATUS"."SITEID"=:SYS_B_06 AND "WOSTATUS"."ISMOBILITY"=:SYS_B_0
+7)                                                                              
+  32 - access("SITEID"= (SELECT "DEFSITE" FROM "MAXUSER" "MAXUSER" WHERE "USERID
+"=:SYS_B_18) AND                                                                
+              "WOSTATUS"."WONUM"="WORKORDER"."WONUM")                           
+       filter("SITEID"=:SYS_B_02 AND "WONUM" LIKE :SYS_B_21)                    
+
+  34 - access("USERID"=:SYS_B_18)                                               
+  35 - filter("WOCLASS"=:SYS_B_00 AND "ISTASK"=:SYS_B_01 AND ("APPTYPE"=:SYS_B_1
+9 OR "APPTYPE"=:SYS_B_20)                                                       
+              AND NVL("WORKTYPE",:SYS_B_25)<>:SYS_B_26)                         
+  36 - access("USERID"=:SYS_B_29 AND "GROUPNAME"=:SYS_B_28)                     
+  37 - filter( NOT EXISTS (SELECT /*+ OPT_ESTIMATE (@"SEL$7" INDEX_SCAN "GROUPUS
+ER"@"SEL$A40D62E7"                                                              
+              "GROUPUSER_NDX2" SCALE_ROWS=3.862730 ) */ 0 FROM "GROUPUSER" "GROU
+PUSER" WHERE "GROUPNAME"=:SYS_B_28 AND                                          
+              "USERID"=:SYS_B_29) AND :SYS_B_04=:SYS_B_00 AND :SYS_B_03=:SYS_B_0
+2)                                                                              
+  38 - access("VW_COL_1"="WORKORDER"."SITEID")                                  
+  44 - access("B1"."USERID"=:SYS_B_09)                                          
+
+  45 - access("B1"."GROUPNAME"="A1"."GROUPNAME" AND "A1"."SITEID"=:SYS_B_02)    
+  46 - access("M1"."INDEPENDENT"=:SYS_B_10 AND "B1"."GROUPNAME"="M1"."GROUPNAME"
+)                                                                               
+  47 - access("T1"."APP"=:SYS_B_11 AND "A1"."GROUPNAME"="T1"."GROUPNAME")       
+  48 - filter( EXISTS (SELECT /*+ OPT_ESTIMATE (@"SEL$5" TABLE "D"@"SEL$5" SCALE
+_ROWS=3.869530 )                                                                
+              OPT_ESTIMATE (@"SEL$5" INDEX_SKIP_SCAN "D"@"SEL$5" "GROUPUSER_NDX3
+" SCALE_ROWS=3.869530 ) OPT_ESTIMATE                                            
+              (@"SEL$5" INDEX_SCAN "D"@"SEL$5" "GROUPUSER_NDX1" SCALE_ROWS=3.862
+730 ) OPT_ESTIMATE (@"SEL$5" INDEX_SCAN                                         
+              "D"@"SEL$5" "GROUPUSER_NDX2" SCALE_ROWS=3.862730 ) */ 0 FROM "GROU
+PUSER" "D","APPLICATIONAUTH"                                                    
+              "C","MAXGROUP" "M2" WHERE "D"."GROUPNAME"="M2"."GROUPNAME" AND "M2
+
+"."INDEPENDENT"=:SYS_B_16 AND                                                   
+              "C"."APP"=:SYS_B_17 AND "D"."USERID"=:SYS_B_15 AND "D"."GROUPNAME"
+="C"."GROUPNAME"))                                                              
+  51 - access("B"."USERID"=:SYS_B_12)                                           
+  52 - access("B"."GROUPNAME"="A"."GROUPNAME" AND "A"."SITEID"=:SYS_B_02)       
+  53 - access("M"."INDEPENDENT"=:SYS_B_13 AND "B"."GROUPNAME"="M"."GROUPNAME")  
+  56 - access("C"."APP"=:SYS_B_17)                                              
+  57 - access("D"."GROUPNAME"="C"."GROUPNAME")                                  
+       filter("D"."GROUPNAME"="C"."GROUPNAME")                                  
+  58 - access("D"."USERID"=:SYS_B_15)                                           
+  59 - filter("M2"."INDEPENDENT"=:SYS_B_16)                                     
+  60 - access("D"."GROUPNAME"="M2"."GROUPNAME")                                 
+  64 - filter("WOSTATUS"."STATUS"=:SYS_B_08 AND "WOSTATUS"."WONUM" LIKE :SYS_B_2
+
+2)                                                                              
+  65 - access("WOSTATUS"."SITEID"=:SYS_B_06 AND "WOSTATUS"."ISMOBILITY"=:SYS_B_0
+7)                                                                              
+  66 - access("SITEID"= (SELECT "DEFSITE" FROM "MAXUSER" "MAXUSER" WHERE "USERID
+"=:SYS_B_18) AND                                                                
+              "WOSTATUS"."WONUM"="WORKORDER"."WONUM")                           
+       filter("SITEID"=:SYS_B_02 AND "WONUM" LIKE :SYS_B_22 AND LNNVL("WONUM" LI
+KE :SYS_B_21))                                                                  
+  68 - access("USERID"=:SYS_B_18)                                               
+  69 - filter("WOCLASS"=:SYS_B_00 AND "ISTASK"=:SYS_B_01 AND ("APPTYPE"=:SYS_B_1
+9 OR "APPTYPE"=:SYS_B_20)                                                       
+              AND NVL("WORKTYPE",:SYS_B_25)<>:SYS_B_26)                         
+  70 - access("USERID"=:SYS_B_29 AND "GROUPNAME"=:SYS_B_28)                     
+
+  71 - filter( NOT EXISTS (SELECT /*+ OPT_ESTIMATE (@"SEL$7" INDEX_SCAN "GROUPUS
+ER"@"SEL$A40D62E7"                                                              
+              "GROUPUSER_NDX2" SCALE_ROWS=3.862730 ) */ 0 FROM "GROUPUSER" "GROU
+PUSER" WHERE "GROUPNAME"=:SYS_B_28 AND                                          
+              "USERID"=:SYS_B_29) AND :SYS_B_04=:SYS_B_00 AND :SYS_B_03=:SYS_B_0
+2)                                                                              
+  72 - access("VW_COL_1"="WORKORDER"."SITEID")                                  
+  78 - access("B1"."USERID"=:SYS_B_09)                                          
+  79 - access("B1"."GROUPNAME"="A1"."GROUPNAME" AND "A1"."SITEID"=:SYS_B_02)    
+  80 - access("M1"."INDEPENDENT"=:SYS_B_10 AND "B1"."GROUPNAME"="M1"."GROUPNAME"
+)                                                                               
+  81 - access("T1"."APP"=:SYS_B_11 AND "A1"."GROUPNAME"="T1"."GROUPNAME")       
+  82 - filter( EXISTS (SELECT /*+ OPT_ESTIMATE (@"SEL$5" TABLE "D"@"SEL$5" SCALE
+
+_ROWS=3.869530 )                                                                
+              OPT_ESTIMATE (@"SEL$5" INDEX_SKIP_SCAN "D"@"SEL$5" "GROUPUSER_NDX3
+" SCALE_ROWS=3.869530 ) OPT_ESTIMATE                                            
+              (@"SEL$5" INDEX_SCAN "D"@"SEL$5" "GROUPUSER_NDX1" SCALE_ROWS=3.862
+730 ) OPT_ESTIMATE (@"SEL$5" INDEX_SCAN                                         
+              "D"@"SEL$5" "GROUPUSER_NDX2" SCALE_ROWS=3.862730 ) */ 0 FROM "GROU
+PUSER" "D","APPLICATIONAUTH"                                                    
+              "C","MAXGROUP" "M2" WHERE "D"."GROUPNAME"="M2"."GROUPNAME" AND "M2
+"."INDEPENDENT"=:SYS_B_16 AND                                                   
+              "C"."APP"=:SYS_B_17 AND "D"."USERID"=:SYS_B_15 AND "D"."GROUPNAME"
+="C"."GROUPNAME"))                                                              
+  85 - access("B"."USERID"=:SYS_B_12)                                           
+  86 - access("B"."GROUPNAME"="A"."GROUPNAME" AND "A"."SITEID"=:SYS_B_02)       
+
+  87 - access("M"."INDEPENDENT"=:SYS_B_13 AND "B"."GROUPNAME"="M"."GROUPNAME")  
+  90 - access("C"."APP"=:SYS_B_17)                                              
+  91 - access("D"."GROUPNAME"="C"."GROUPNAME")                                  
+       filter("D"."GROUPNAME"="C"."GROUPNAME")                                  
+  92 - access("D"."USERID"=:SYS_B_15)                                           
+  93 - filter("M2"."INDEPENDENT"=:SYS_B_16)                                     
+  94 - access("D"."GROUPNAME"="M2"."GROUPNAME")                                 
+  98 - filter("WOSTATUS"."STATUS"=:SYS_B_08 AND "WOSTATUS"."WONUM" LIKE :SYS_B_2
+3)                                                                              
+  99 - access("WOSTATUS"."SITEID"=:SYS_B_06 AND "WOSTATUS"."ISMOBILITY"=:SYS_B_0
+7)                                                                              
+ 100 - access("SITEID"= (SELECT "DEFSITE" FROM "MAXUSER" "MAXUSER" WHERE "USERID
+"=:SYS_B_18) AND                                                                
+
+              "WOSTATUS"."WONUM"="WORKORDER"."WONUM")                           
+       filter("SITEID"=:SYS_B_02 AND "WONUM" LIKE :SYS_B_23 AND LNNVL("WONUM" LI
+KE :SYS_B_21) AND                                                               
+              LNNVL("WONUM" LIKE :SYS_B_22))                                    
+ 102 - access("USERID"=:SYS_B_18)                                               
+ 103 - filter("WOCLASS"=:SYS_B_00 AND "ISTASK"=:SYS_B_01 AND ("APPTYPE"=:SYS_B_1
+9 OR "APPTYPE"=:SYS_B_20)                                                       
+              AND NVL("WORKTYPE",:SYS_B_25)<>:SYS_B_26)                         
+ 104 - access("USERID"=:SYS_B_29 AND "GROUPNAME"=:SYS_B_28)                     
+ 105 - filter( NOT EXISTS (SELECT /*+ OPT_ESTIMATE (@"SEL$7" INDEX_SCAN "GROUPUS
+ER"@"SEL$A40D62E7"                                                              
+              "GROUPUSER_NDX2" SCALE_ROWS=3.862730 ) */ 0 FROM "GROUPUSER" "GROU
+PUSER" WHERE "GROUPNAME"=:SYS_B_28 AND                                          
+
+              "USERID"=:SYS_B_29) AND :SYS_B_04=:SYS_B_00 AND :SYS_B_03=:SYS_B_0
+2)                                                                              
+ 114 - access("B1"."USERID"=:SYS_B_09)                                          
+ 115 - access("B1"."GROUPNAME"="A1"."GROUPNAME" AND "A1"."SITEID"=:SYS_B_02)    
+ 116 - access("M1"."INDEPENDENT"=:SYS_B_10 AND "B1"."GROUPNAME"="M1"."GROUPNAME"
+)                                                                               
+ 117 - access("T1"."APP"=:SYS_B_11 AND "A1"."GROUPNAME"="T1"."GROUPNAME")       
+ 118 - filter( EXISTS (SELECT /*+ OPT_ESTIMATE (@"SEL$5" TABLE "D"@"SEL$5" SCALE
+_ROWS=3.869530 )                                                                
+              OPT_ESTIMATE (@"SEL$5" INDEX_SKIP_SCAN "D"@"SEL$5" "GROUPUSER_NDX3
+" SCALE_ROWS=3.869530 ) OPT_ESTIMATE                                            
+              (@"SEL$5" INDEX_SCAN "D"@"SEL$5" "GROUPUSER_NDX1" SCALE_ROWS=3.862
+730 ) OPT_ESTIMATE (@"SEL$5" INDEX_SCAN                                         
+
+              "D"@"SEL$5" "GROUPUSER_NDX2" SCALE_ROWS=3.862730 ) */ 0 FROM "GROU
+PUSER" "D","APPLICATIONAUTH"                                                    
+              "C","MAXGROUP" "M2" WHERE "D"."GROUPNAME"="M2"."GROUPNAME" AND "M2
+"."INDEPENDENT"=:SYS_B_16 AND                                                   
+              "C"."APP"=:SYS_B_17 AND "D"."USERID"=:SYS_B_15 AND "D"."GROUPNAME"
+="C"."GROUPNAME"))                                                              
+ 121 - access("B"."USERID"=:SYS_B_12)                                           
+ 122 - access("B"."GROUPNAME"="A"."GROUPNAME" AND "A"."SITEID"=:SYS_B_02)       
+ 123 - access("M"."INDEPENDENT"=:SYS_B_13 AND "B"."GROUPNAME"="M"."GROUPNAME")  
+ 126 - access("C"."APP"=:SYS_B_17)                                              
+ 127 - access("D"."GROUPNAME"="C"."GROUPNAME")                                  
+       filter("D"."GROUPNAME"="C"."GROUPNAME")                                  
+ 128 - access("D"."USERID"=:SYS_B_15)                                           
+
+ 129 - filter("M2"."INDEPENDENT"=:SYS_B_16)                                     
+ 130 - access("D"."GROUPNAME"="M2"."GROUPNAME")                                 
+ 131 - filter(("APPTYPE"=:SYS_B_19 OR "APPTYPE"=:SYS_B_20) AND NVL("WORKTYPE",:S
+YS_B_25)<>:SYS_B_26)                                                            
+ 132 - access("WOCLASS"=:SYS_B_00 AND "ISTASK"=:SYS_B_01 AND "SITEID"= (SELECT "
+DEFSITE" FROM "MAXUSER"                                                         
+              "MAXUSER" WHERE "USERID"=:SYS_B_18) AND "WONUM" LIKE :SYS_B_24)   
+       filter("VW_COL_1"="WORKORDER"."SITEID" AND "SITEID"=:SYS_B_02 AND "WONUM"
+ LIKE :SYS_B_24 AND                                                             
+              LNNVL("WONUM" LIKE :SYS_B_21) AND LNNVL("WONUM" LIKE :SYS_B_22) AN
+D LNNVL("WONUM" LIKE :SYS_B_23))                                                
+ 134 - access("USERID"=:SYS_B_18)                                               
+ 135 - filter("WOSTATUS"."ISMOBILITY"=:SYS_B_07 AND "WOSTATUS"."STATUS"=:SYS_B_0
+
+8)                                                                              
+ 136 - access("WOSTATUS"."SITEID"=:SYS_B_06 AND "WOSTATUS"."WONUM"="WORKORDER"."
+WONUM")                                                                         
+       filter("WOSTATUS"."WONUM" LIKE :SYS_B_24)                                
+ 137 - access("USERID"=:SYS_B_29 AND "GROUPNAME"=:SYS_B_28)                     
+                                                                                
+------------------------------------------------------------------------------- 
+                                                                                
+SQL> spool off

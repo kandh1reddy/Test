@@ -1,0 +1,151 @@
+RMANPROD =
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = adplpord13.adweag.local)(PORT = 1531))
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = rmanprod)
+    )
+  )
+
+sqlplus DCCBCAT/dzn0sl@RMANPROD
+
+create spfile='+DATA02/DCCBTRN/PARAMETERFILE/spfiledccbtrn.ora' from pfile='/export/home/oradccbu/initdccbtrn.ora';
+sqlplus -s /nolog <<EOF
+connect /as sysdba;
+alter system set cluster_database=FALSE scope=spfile sid='*';
+EOF
+
+srvctl stop database -d dccbtrn -o immediate
+
+sqlplus -s /nolog <<EOF
+connect /as sysdba;
+startup nomount;
+EOF
+
+
+dccbtrn1
+### Set Restore DATE
+OFFSET=1;
+eval `date "+day=%d; month=%m; year=%Y"`
+# Subtract offset from day, if it goes below one use 'cal'
+# to determine the number of days in the previous month.
+day=`expr $day - $OFFSET`
+if [ $day -le 0 ] ;then
+month=`expr $month - 1`
+if [ $month -eq 0 ] ;then
+year=`expr $year - 1`
+month=12
+fi
+set `cal $month $year`
+xday=${$#}
+day=`expr $xday + $day`
+fi
+RESTOREDATE=$year-$month-$day
+echo $RESTOREDATE
+
+
+
+rman auxiliary / log=/export/home/oradccbu/restore_dccbprod_$RESTOREDATE.log
+connect catalog DCCBCAT/dzn0sl@RMANPROD
+set DBID=847358077
+SET PARALLELMEDIARESTORE OFF;
+run {
+allocate AUXILIARY channel c0 type sbt PARMS="SBT_LIBRARY=/opt/AVMRclnt/ora_rac/lib/libobk_avamar64.so" send '"--prefix=12/DCCBPROD/" "--after=$RESTOREDATE" "--nohist" "--flagfile=/orabkp/AVAMARRESTORE/avatar_flag_file_dd_rac_addc.txt" "--bindir=/opt/AVMRclnt/ora_rac/bin" "--logfile=/tmp/c0_duplicatelog.txt"' format '%d_%U';
+allocate AUXILIARY channel c1 type sbt PARMS="SBT_LIBRARY=/opt/AVMRclnt/ora_rac/lib/libobk_avamar64.so" send '"--prefix=12/DCCBPROD/" "--after=$RESTOREDATE" "--nohist" "--flagfile=/orabkp/AVAMARRESTORE/avatar_flag_file_dd_rac_addc.txt" "--bindir=/opt/AVMRclnt/ora_rac/bin" "--logfile=/tmp/c1_duplicatelog.txt"' format '%d_%U';
+allocate AUXILIARY channel c2 type sbt PARMS="SBT_LIBRARY=/opt/AVMRclnt/ora_rac/lib/libobk_avamar64.so" send '"--prefix=12/DCCBPROD/" "--after=$RESTOREDATE" "--nohist" "--flagfile=/orabkp/AVAMARRESTORE/avatar_flag_file_dd_rac_addc.txt" "--bindir=/opt/AVMRclnt/ora_rac/bin" "--logfile=/tmp/c2_duplicatelog.txt"' format '%d_%U';
+allocate AUXILIARY channel c3 type sbt PARMS="SBT_LIBRARY=/opt/AVMRclnt/ora_rac/lib/libobk_avamar64.so" send '"--prefix=12/DCCBPROD/" "--after=$RESTOREDATE" "--nohist" "--flagfile=/orabkp/AVAMARRESTORE/avatar_flag_file_dd_rac_addc.txt" "--bindir=/opt/AVMRclnt/ora_rac/bin" "--logfile=/tmp/c3_duplicatelog.txt"' format '%d_%U';
+set until time="to_date('$RESTOREDATE 16:00:00','yyyy-mm-dd hh24:mi:ss')";
+duplicate target database to "dccbtrn" nofilenamecheck;
+RELEASE CHANNEL c0;
+RELEASE CHANNEL c1;
+RELEASE CHANNEL c2;
+RELEASE CHANNEL c3;
+}
+
+
+
+
+rman auxiliary / log=/export/home/oradccbu/restore_dccbprod_$RESTOREDATE.log << EOF
+run {
+allocate AUXILIARY channel c0 type disk;
+allocate AUXILIARY channel c1 type disk;
+allocate AUXILIARY channel c2 type disk;
+allocate AUXILIARY channel c3 type disk;
+allocate AUXILIARY channel c4 type disk;
+allocate AUXILIARY channel c5 type disk;
+allocate AUXILIARY channel c6 type disk;
+allocate AUXILIARY channel c7 type disk;
+duplicate target database TO "dccbtrn" BACKUP LOCATION '/orabkp/rmanbkup' NOFILENAMECHECK;
+RELEASE CHANNEL c0;
+RELEASE CHANNEL c1;
+RELEASE CHANNEL c2;
+RELEASE CHANNEL c3;
+RELEASE CHANNEL c4;
+RELEASE CHANNEL c5;
+RELEASE CHANNEL c6;
+RELEASE CHANNEL c7;
+}
+EXIT;
+EOF
+
+
+Post Refresh steps
+
+sqlplus -s /nolog <<EOF
+connect / as sysdba;
+alter system set cluster_database=TRUE scope=spfile;
+shutdown immediate;
+startup mount;
+alter database noarchivelog;
+shutdown immediate;
+EXIT;
+EOF
+
+sqlplus -s /nolog <<EOF
+connect / as sysdba;
+alter trigger NO_CHANGE_PWD disable;
+alter user cisadm identified by cisadm900 account unlock;
+alter user cisbatch identified by cisbatch account unlock;
+alter user cismpl identified by cismpl123 account unlock;
+alter user cisread identified by cisread account unlock;
+alter user cisuser identified by cisuser123 account unlock;
+alter user cisxai identified by cisxai123 account unlock;
+exit;
+EOF
+
+sqlplus -s /nolog <<EOF
+connect cisadm/cisadm900;
+DELETE FROM cisadm.ci_wf_proc_sched_k
+      WHERE wf_proc_sched_id IN (SELECT wf_proc_sched_id
+                                   FROM cisadm.ci_wf_proc_sched
+                                  WHERE wfp_sched_stat_flg = 'P');
+DELETE FROM cisadm.ci_wf_proc_sched
+      WHERE wfp_sched_stat_flg = 'P';
+DELETE FROM cisadm.ci_batch_job_k
+      WHERE batch_job_id IN (SELECT batch_job_id
+                               FROM cisadm.ci_batch_job
+                              WHERE batch_job_stat_flg = 'PD');
+DELETE FROM cisadm.ci_batch_job
+      WHERE batch_job_stat_flg = 'PD';
+UPDATE sc_usr_grp_usr
+   SET expiration_dt = TO_DATE ('28-Nov-2100', 'DD-MON-YYYY')
+WHERE user_id IN ('CDX', 'SYSUSER',  'CISREAD');
+Update CI_XAI_SENDER
+set active_sw = 'N';
+update CI_XAI_SNDR_CTX
+set F1_CTXT_VAL_LONG = '-----'
+where sender_ctxt_flg like 'HTU%';
+Update CI_WFM_OPT
+Set WFM_OPT_VAL='---'
+Where WFM_NAME='CM_SOAP_UP';
+update /*** 47 rows **/ CI_ALG_PARM
+set alg_parm_val = replace (alg_parm_val,'/CCB_DOC1_PRD_Share/','/CCB_DOC1_UAT_Share/')
+where alg_parm_val like '/CCB_DOC1_PRD_Share/%';
+commit;
+exit;
+EOF
+
+
+
+

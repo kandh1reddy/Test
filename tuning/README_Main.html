@@ -1,0 +1,676 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=us-ascii" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <title>Oracle Database Patch 34160831   - Combo of OJVM Component Release Update 19.16.0.0.220719 + Database Jul 2022 Release Update 19.16.0.0.220719</title>
+    <meta name="doctitle" content="Oracle Database Patch 34160831   - Combo of OJVM Component Release Update 19.16.0.0.220719 + Database Jul 2022 Release Update 19.16.0.0.220719" />
+    <meta name="partnum" content="E2358432-01" />
+    <meta name="docid" content="null" />
+    <meta name="brand" content="DARB" />
+    <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+    <meta name="plugin" content="Infodev XHTML plugin release 17.2.1" />
+    <meta name="date" content="2018-05-18T12:00:39Z" />
+    <meta name="robots" content="noarchive" />
+    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <!-- Styles begin here -->
+    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <style>
+body, p, table, td, th, ol, ul, a, dl, dt, dd, blockquote, caption {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.25;
+  color: black;
+  background-color: white;
+  /* Fahrner Method. See Zeldman. Working with Web Standards. pp. 323-5. */
+  font-size: x-small;
+  /* Apris changed following */
+  voice-family: "\"}\"";
+  
+  voice-family: inherit;
+  font-size: small;
+}
+html > body {
+  font-size: small;
+}
+
+a {
+  text-decoration: underline;
+}
+
+a:link {
+  color: #630;
+  background-color: white;
+}
+
+a:visited {
+  color: #963;
+  background-color: white;
+}
+
+a:hover {
+  color: #f60;
+  background-color: white;
+}
+
+a:active {
+  color: #f60;
+  background-color: white;
+}
+
+a.glossary-link {
+  border-bottom: 1px dotted;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #369;
+  background-color: white;
+}
+
+h1 {
+  font-size: 1.6em;
+  font-weight: bold;
+  border: solid #cc9;
+  border-width: 0px 0px 1px 0px;
+  width: 100%;
+}
+
+h2 {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+pre, code {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1em;
+}
+
+code {
+  color: #369;
+  background-color: white;
+}
+
+code *.code-comment {
+  color: black;
+  background-color: white;
+}
+
+a:link code {
+  color: #630;
+  background-color: white;
+}
+
+a:visited code {
+  color: #963;
+  background-color: white;
+}
+
+a:hover code {
+  color: #f60;
+  background-color: white;
+}
+
+a:active code {
+  color: #f60;
+  background-color: white;
+}
+
+caption {
+  text-align: center;
+  font-weight: bold;
+  width: auto;
+}
+
+dt {
+  font-weight: bold;
+}
+
+td {
+  vertical-align: top;
+}
+
+th {
+  font-weight: bold;
+  text-align: left;
+  vertical-align: bottom;
+  color: #369;
+  background-color: white;
+}
+
+ol ol {
+    list-style-type: lower-alpha;
+}
+
+ol ol ol {
+    list-style-type: lower-roman;
+}
+
+table.table-border {
+  border: 1px solid #cc9;
+}
+
+table.table-border td,
+table.table-border th {
+  padding: 2px 4px 2px 4px;
+  color: black;
+  background-color: white;
+  border: 1px solid #cc9;
+}
+
+table.table-border th.table-header-border-left,
+table.table-border th.table-header-border-middle,
+table.table-border th.table-header-border-right {
+  color: #369;
+  background-color: #cc9;
+}
+
+table.table-border th.table-header-border-left {
+  border-left: 1px solid #cc9;
+  border-right: 1px solid white;
+  color: black;
+  background-color: #cc9;
+}
+
+table.table-border th.table-header-border-middle {
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  color: black;
+  background-color: #cc9;
+}
+
+table.table-border th.table-header-border-right {
+  border-left: 1px solid white;
+  border-right: 1px solid #cc9;
+  color: black;
+  background-color: #cc9;
+}
+
+span.gui-object, span.gui-object-action {
+  font-weight: bold;
+}
+
+span.gui-object-title { }
+
+p.horizontal-rule {
+  width: 100%;
+  border: solid #cc9;
+  border-width: 0px 0px 1px 0px;
+  margin-bottom: 4ex;
+}
+
+p.booktitle {
+  font-weight: bold;
+  font-size: 125%;
+}
+
+div.zz-skip-header {
+  margin-bottom: 0px;
+  margin-top: -2px;
+  padding: 0px;
+  text-align: center;
+  line-height: 1px;
+}
+
+div.zz-skip-header a:link,
+div.zz-skip-header a:visited,
+div.zz-skip-header a:hover,
+div.zz-skip-header a:active {
+  color: white;
+  background-color: white;
+  text-decoration: none;
+  font-size: 0.2ex;
+  line-height: 1px;
+}
+
+td.zz-nav-header-cell {
+  text-align: left;
+  font-size: 0.95em;
+  width: 99%;
+  color: black;
+  background-color: white;
+  font-weight: normal;
+  vertical-align: top;
+  margin-top: 0ex;
+  padding-top: 0ex;
+}
+
+a.zz-nav-header-link {
+  font-size: 0.95em;
+}
+
+td.zz-nav-button-cell {
+  white-space: nowrap;
+  text-align: center;
+  width: 1%;
+  vertical-align: top;
+  padding-left: 4px;
+  padding-right: 4px;
+  margin-top: 0ex;
+  padding-top: 0ex;
+}
+
+a.zz-nav-button-link {
+  font-size: 0.9em;
+}
+
+div.zz-nav-footer-menu {
+  width: 100%;
+  text-align: center;
+  margin-top: 2ex;
+  margin-bottom: 4ex;
+}
+
+p.zz-legal-notice, a.zz-legal-notice-link {
+  font-size: 0.85em;
+  /* display: none; */  /* Uncomment to hide legal notice */
+}
+
+p.seghead {
+  font-weight: bold;
+  margin-left: -2pt;
+}
+
+/*************************************/
+/*  Begin DARB Formats          */
+/*************************************/
+
+h5, h6 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #369;
+  background-color: white;
+  font-size: 0.95em;
+  font-weight: bold;
+}
+
+h6 {
+  font-weight: normal;
+}
+
+td li p {
+  display: inline;
+}
+
+/* lose the h1 underscore */
+/*
+h1 {
+  border-width : 0px 0px 0px 0px;
+}
+*/
+
+/* Increase contrast between visited and unvisited links. */
+/*
+a:visited {
+  color: #a30;
+  background-color: white;
+}
+*/
+
+.bold, .codeinlinebold, .syntaxinlinebold, .term, .glossterm,
+.glossaryterm, .keyword, .msg, .msgexplankw, .msgactionkw, .notep1 {
+  font-weight: bold;
+}
+
+.italic, .codeinlineitalic, .syntaxinlineitalic, .variable {
+  font-style: italic;
+}
+
+.bolditalic, .codeinlineboldital, .syntaxinlineboldital,
+.titleinfigure, .titleinexample, .titleintable, .titleinequation {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.bridgehead, .titleinrefsubsect, .subhead1, .subhead2, .subhead3 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #369;
+  background-color: white;
+  font-weight: bold;
+}
+
+.titleinrefsubsect, .subhead1 {
+  font-size: 1.1em;
+}
+
+.subhead2 {
+  font-size: 1.0em;
+}
+
+.subhead3 {
+  font-size: 0.95em;
+  display: inline;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.superscript {
+  vertical-align: super;
+}
+
+.subscript {
+  vertical-align: sub;
+}
+
+.listofeft {
+  border: none;
+}
+
+.betadraft {
+  color: #f00;
+  background-color: white;
+}
+
+.betadraftsubtitle {
+  text-align: center;
+  font-weight: bold;
+  color: #f00;
+  background-color: white;
+}
+
+.comment {
+  color: #080;
+  background-color: white;
+  font-weight: bold;
+}
+
+.copyrightlogo {
+  text-align: center;
+  font-size: 0.85em;
+  border-style: none;
+}
+
+.tocsubheader {
+  list-style-type: none;
+}
+
+/*************************************/
+/*  End DARB Formats                 */
+/*************************************/
+
+ all {
+  * {
+    background-color: transparent;
+    line-height: 1.2;
+  }
+  body {
+    color: black;
+    background-color: white;
+  }
+/*
+  dd {
+    margin-bottom: 2ex;
+  }
+  dl:first-child {
+    margin-top: 2ex;
+  }
+*/
+}
+
+ print {
+  body, p, table, td, th, ol, ul, a, dl, dt, dd, blockquote, caption {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 11pt;
+  }
+
+  h1, h2, h3, h4, h5, h6, th, thead td {
+    font-family: Arial, Helvetica, serif;
+    color: black;
+    background-color: white;
+  }
+
+  div.zz-skip-header {
+    display: none;
+  }
+
+  code, a:link, a:visited, a:hover, a:active {
+    color: black;
+    background-color: white;
+    text-decoration: none;
+  }
+}
+</style><!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <!-- Styles end here -->
+    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+  </head>
+  <body>
+    <div class="header"><a id="top" name="top"></a>
+      <div class="zz-skip-header"><a href="#BEGIN">Skip Headers</a></div>
+      <a name="BEGIN" id="BEGIN"></a>
+    </div>
+    <!-- class="header" -->
+    <div class="ind"><!-- End Header -->
+      <div class="letterstyle">
+        <h1 class="docinfo">Oracle® Database</h1>
+        <p class="booktitle">Patch 34160831   - Combo of OJVM Component Release Update 19.16.0.0.220719 + Database Jul 2022 Release Update 19.16.0.0.220719</p>
+        <p><span class="revnumber"></span> </p>
+        <p class="date"> </p>
+        <div>
+          <div>
+            <p>This document is accurate at the time of release. For any changes
+              and additional information regarding this patch, see these related
+              documents that are available at My Oracle Support (<a href="http://support.oracle.com/"
+                target="_blank"><code class="codeph">http://support.oracle.com/</code></a>):</p>
+            <ul style="list-style-type: disc;">
+              <li>
+                <p>Document <a href="https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=19202207.9"
+                    target="_blank"><span>19202207.9</span></a> <span
+                    class="italic">Oracle Database 19c Release Update and Release Update Revision Jul 2022 Known  Issues</span></p>
+              </li>
+            </ul>
+            <p>This patch is not Oracle RAC Rolling installable. However, the
+              OJVM RU (Update) may be installed in a "Conditional Rolling
+              Install" fashion for the following use cases:</p>
+            <ul style="list-style-type: disc;">
+              <li>
+                <p>No OJVM usage</p>
+              </li>
+              <li>
+                <p>OJVM used by non-critical jobs and programs</p>
+              </li>
+              <li>
+                <p>OJVM used by critical functions isolated as services</p>
+              </li>
+              <li>
+                <p>OJVM used extensively, not isolated, and downtime is
+                  tolerated</p>
+              </li>
+              <li>
+                <p>OJVM used by critical functions and minimal downtime is
+                  required</p>
+              </li>
+            </ul>
+            <p>See My Oracle Support Document <a href="https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=2217053.1"
+                target="_blank">2217053.1</a> for more details.</p>
+            <p>This document includes the following sections:</p>
+            <ul style="list-style-type: disc;">
+              <li>
+                <p><a href="#GUID-E1AE5071-6ADC-40C4-A802-1C540D15FBF0">About
+                    the Combo Patch</a></p>
+              </li>
+              <li>
+                <p><a href="#GUID-D133011F-B062-40DB-A6D2-B381418B9BAF">Installing
+                    the Combo Patch</a></p>
+              </li>
+              <li>
+                <p><a href="#GUID-D32D7CE1-1580-4F7E-AEFA-1C024D6C7D7C">Uninstalling
+                    the Combo Patch</a></p>
+              </li>
+              <li>
+                <p><a href="#GUID-E409CC44-9A8F-4043-82C8-6B95CD939296">Documentation
+                    Accessibility</a></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="sect2"><!-- infolevel="all" infotype="General" --><a name="GUID-E1AE5071-6ADC-40C4-A802-1C540D15FBF0"
+            id="GUID-E1AE5071-6ADC-40C4-A802-1C540D15FBF0"></a>
+          <h2 id="null-GUID-E1AE5071-6ADC-40C4-A802-1C540D15FBF0" class="sect2"><span
+              class="enumeration_section">1.1 </span>About the Combo Patch</h2>
+          <div>
+            <p>This is a convenience patch that includes both the
+               Oracle JavaVM Component Release Update <span>19.16.0.0.220719</span> patch and the Database Jul 2022 Release Update <span>19.16.0.0.220719</span>
+              patch and can be downloaded using a single zip from My Oracle
+              Support.</p>
+            <p>The Patch contains the following list of patches:</p>
+            <ul style="list-style-type: disc;">
+              <li>
+                <p>Patch <span>34133642</span> - 
+                  Database Jul 2022 Release Update <span>19.16.0.0.220719</span> --&gt; RAC-Rolling Installable </p>
+              </li>
+              <li>
+                <p>Patch <span>34086870</span> -
+                  Oracle JavaVM Component Release Update <span>19.16.0.0.220719</span> . Patch has some additional requirements if it is to be installed in a "Conditional Rolling Install" fashion, as detailed in MOS NOTE <a href="https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=2217053.1" target="_blank">2217053.1</a>.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="sect2"><!-- infolevel="all" infotype="General" --><a name="GUID-D133011F-B062-40DB-A6D2-B381418B9BAF"
+            id="GUID-D133011F-B062-40DB-A6D2-B381418B9BAF"></a>
+          <h2 id="null-GUID-D133011F-B062-40DB-A6D2-B381418B9BAF" class="sect2"><span
+              class="enumeration_section">1.2 </span>Installing the Combo Patch</h2>
+          <div>
+            <p>To install patches, complete the following steps:</p>
+            <ol>
+              <li>
+                <p>Download and extract the ARU patch file available under Patch
+                  <span>34160831  </span> to a directory of your
+                  choice. </p>
+                <ul style="list-style-type: disc;">
+                  <li>
+                    <p>Unzip patch file downloaded. An example is as follows:</p>
+                    <pre class="oac_no_warn" dir="ltr">% unzip p<span>34160831 </span>_190000_&lt;platform&gt;.zip
+inflating: README.html
+inflating: ...
+%
+</pre>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Verify the structure of the contents of the Combo Patch. The
+                  top-level directory contains this README document and some
+                  sub-directories in the following layout:</p>
+                <pre class="oac_no_warn" dir="ltr"><span>34160831  </span>
+|
+|- README.txt 
+| 
+|- README.html 
+|
+|- <a href="https://updates.oracle.com/ARULink/PatchDetails/process_form?patch_num=34133642"
+target="_blank"><span>34133642</span></a>
+|
+|      --README.html
+|      -- &lt;other files and directories&gt;
+|
+|- <a href="https://updates.oracle.com/ARULink/PatchDetails/process_form?patch_num=34086870"
+target="_blank"><span>34086870</span></a>
+|
+|      --README.html
+|      -- &lt;other files and directories&gt;
+|
+NOTE:  To review the READMEs for the component patches, click on the component patch number, then click Read Me.
+</pre>
+              </li>
+              <li>
+                <p>Install each of the component patches. For information about
+                  installing these patches, refer to the component-specific
+                  README files which are included in the patch bundle. For
+                  example, to know information about applying the
+                  Oracle JavaVM Component Release Update <span>19.16.0.0.220719</span> patch, see <span>34160831 </span>/<span>34086870</span>/README.html.</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="sect2"><!-- infolevel="all" infotype="General" --><a name="GUID-D32D7CE1-1580-4F7E-AEFA-1C024D6C7D7C"
+            id="GUID-D32D7CE1-1580-4F7E-AEFA-1C024D6C7D7C"></a>
+          <h2 id="null-GUID-D32D7CE1-1580-4F7E-AEFA-1C024D6C7D7C" class="sect2"><span
+              class="enumeration_section">1.3 </span>Uninstalling the Combo
+            Patch</h2>
+          <div>
+            <p>Refer to the component-specific READMEs for rollback
+              instructions.</p>
+          </div>
+        </div>
+<div class="sect1"><!-- infolevel="all" infotype="General" --><a name="GUID-E409CC44-9A8F-4043-82C8-6B95CD939296" id="GUID-E409CC44-9A8F-4043-82C8-6B95CD939296"></a><h2 id="null-GUID-E409CC44-9A8F-4043-82C8-6B95CD939296" class="sect1"><span class="enumeration_section">4 </span>Documentation Accessibility</h2>
+        <p>For information about Oracle's commitment to accessibility, visit the Oracle Accessibility Program website 
+		at <code><a href="http://www.oracle.com/pls/topic/lookup?ctx=acc&id=docacc" target="_blank">http://www.oracle.com/pls/topic/lookup?ctx=acc&id-docacc</a></code>.</p>
+        <a id="sthref43" name="sthref43"></a>
+        <p class="subhead2">Access to Oracle Support</p>
+        <p>Oracle customers that have purchased support have access to electronic support through My Oracle Support. For information, 
+		visit <code><a href="http://www.oracle.com/pls/topic/lookup?ctx=acc&id=info" target="_blank">http://www.oracle.com/pls/topic/lookup?ctx=acc&id=info</a></code>
+          or visit <code><a href="http://www.oracle.com/pls/topic/lookup?ctx=acc&id=trs" target="_blank">http://www.oracle.com/pls/topic/lookup?ctx=acc&id=trs</a></code>
+          if you are hearing impaired.</p>
+      </div>
+            <!-- class="section" -->
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="notices">
+        <p>Oracle Database Patch 34160831   - Combo of OJVM Component Release Update 19.16.0.0.220719 + Database Jul 2022 Release Update 19.16.0.0.220719<span></span>
+        </p>
+<p>Copyright © 2006, 2022, Oracle and/or its affiliates.</p>
+      <p>This software and related documentation are provided under a license agreement containing 
+	  restrictions on use and disclosure and are protected by intellectual property laws. Except as 
+	  expressly permitted in your license agreement or allowed by law, you may not use, copy, reproduce, 
+	  translate, broadcast, modify, license, transmit, distribute, exhibit, perform, publish, or 
+	  display any part, in any form, or by any means. Reverse engineering, disassembly, or decompilation 
+	  of this software, unless required by law for interoperability, is prohibited.</p>
+      <p>The information contained herein is subject to change without notice and is not warranted to be 
+	  error-free. If you find any errors, please report them to us in writing.</p>
+      <p>If this is software or related documentation that is delivered to the U.S. Government or anyone 
+	  licensing it on behalf of the U.S. Government, then the following notice is applicable:</p>
+      <p>U.S. GOVERNMENT END USERS: Oracle programs, including any operating system, integrated software, 
+	  any programs installed on the hardware, and/or documentation, delivered to U.S. Government end 
+	  users are "commercial computer software" pursuant to the applicable Federal Acquisition Regulation 
+	  and agency-specific supplemental regulations. As such, use, duplication, disclosure, modification, 
+	  and adaptation of the programs, including any operating system, integrated software, any programs 
+	  installed on the hardware, and/or documentation, shall be subject to license terms and license 
+	  restrictions applicable to the programs. No other rights are granted to the U.S. Government.</p>
+      <p>This software or hardware is developed for general use in a variety of information management 
+	  applications. It is not developed or intended for use in any inherently dangerous applications, 
+	  including applications that may create a risk of personal injury. If you use this software or 
+	  hardware in dangerous applications, then you shall be responsible to take all appropriate fail-safe, 
+	  backup, redundancy, and other measures to ensure its safe use. Oracle Corporation and its affiliates 
+	  disclaim any liability for any damages caused by use of this software or hardware in dangerous applications.</p>
+      <p>Oracle and Java are registered trademarks of Oracle and/or its affiliates. Other names may be trademarks 
+	  of their respective owners.</p>
+      <p>Intel and Intel Xeon are trademarks or registered trademarks of Intel Corporation. All SPARC trademarks 
+	  are used under license and are trademarks or registered trademarks of SPARC International, Inc. AMD, Opteron, 
+	  the AMD logo, and the AMD Opteron logo are trademarks or registered trademarks of Advanced Micro Devices. 
+	  UNIX is a registered trademark of The Open Group.</p>
+	  <p>This software or hardware and documentation may provide access to or information about content, products, 
+	  and services from third parties. Oracle Corporation and its affiliates are not responsible for and expressly 
+	  disclaim all warranties of any kind with respect to third-party content, products, and services unless otherwise 
+	  set forth in an applicable agreement between you and Oracle. Oracle Corporation and its affiliates will not be 
+	  responsible for any loss, costs, or damages incurred due to your access to or use of third-party content, 
+	  products, or services, except as set forth in an applicable agreement between you and Oracle.</p>
+</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <hr />
+      <div width="34%" align="center">
+        <font size="-2">
+          Copyright © 2006, 2022, Oracle and/or its
+          affiliates.
+        </font>
+      </div>
+      <!-- class="footer" -->
+    </div>
+  </body>
+</html>
